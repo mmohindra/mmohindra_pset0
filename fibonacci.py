@@ -13,14 +13,12 @@ def last_8(some_int):
 
 def optimized_fibonacci(f):
     if (f<= 0):
-        print('Incorrect Number')
-    elif (f==1):
         return 0
-    elif (f==2):
+    elif (f==1):
         return 1
     else:
         myseq= SummableSequence(0,1)
-    return myseq(f+1)
+    return myseq(f)
 
 
 class SummableSequence(object):
@@ -46,7 +44,7 @@ class SummableSequence(object):
 
             circ_start = 0
 
-            for k in (range(startseq, i)):
+            for k in (range(startseq, i+1)):
                 sumNum = np.sum(self.narr)
                 self.narr[circ_start]=sumNum
                 circ_start = (circ_start +1) % self.baselen
@@ -56,7 +54,7 @@ class SummableSequence(object):
 
 if __name__ == "__main__":
 
-    print("f(100000)[-8:]", last_8(optimized_fibonacci(30)))
+    print("f(100000)[-8:]", last_8(optimized_fibonacci(6)))
 
     new_seq = SummableSequence(5, 7, 11, 12)
 
