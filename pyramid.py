@@ -5,7 +5,7 @@ A pyramid of height 3 would look like:
 
 --=--
 -===-
-=====
+===== mukta is testing pycharm
 
 """
 
@@ -17,7 +17,13 @@ def print_pyramid(rows):
 
     :param int rows: total height
     """
-    raise NotImplementedError("Called with rows={}".format(rows))
+
+    maxsigncnt = rows*2-1
+    for i in range(1,rows+1):
+        ddashcnt = i*2-1
+        dashcnt = int((maxsigncnt -ddashcnt)/2)
+        print(('-'*dashcnt),('='*ddashcnt),('-'*dashcnt), sep='')
+    #raise NotImplementedError("Called with rows={}".format(rows))
 
 
 if __name__ == "__main__":
