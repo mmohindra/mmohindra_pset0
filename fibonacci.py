@@ -12,8 +12,15 @@ def last_8(some_int):
 
 
 def optimized_fibonacci(f):
-    myseq= SummableSequence(5, 7, 11)
-    return myseq(f)
+    if (f<= 0):
+        print('Incorrect Number')
+    elif (f==1):
+        return 0
+    elif (f==2):
+        return 1
+    else:
+        myseq= SummableSequence(0,1)
+    return myseq(f+1)
 
 
 class SummableSequence(object):
@@ -49,7 +56,7 @@ class SummableSequence(object):
 
 if __name__ == "__main__":
 
-    print("f(100000)[-8:]", last_8(optimized_fibonacci(1000000)))
+    print("f(100000)[-8:]", last_8(optimized_fibonacci(30)))
 
     new_seq = SummableSequence(5, 7, 11, 12)
 
