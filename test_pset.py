@@ -81,7 +81,7 @@ class FibTests(TestCase):
             (100, 354224848179261915075),
         ]:
             with timeout(message="Timeout running f({})".format(n)):
-               self.assertEqual(expected, ss(n))
+               self.assertEqual(expected, ss(n+1))
 
 
 
