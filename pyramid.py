@@ -5,7 +5,7 @@ A pyramid of height 3 would look like:
 
 --=--
 -===-
-===== mukta is testing pycharm
+=====
 
 """
 

@@ -70,8 +70,7 @@ class FibTests(TestCase):
         ss = SummableSequence(0, 1)
         for n, expected in [
             # Check progressively more complex values, see if time out
-            (0, 0),
-            (1, 1),
+
             (6, 8),
             (10, 55),
             (15, 610),
@@ -81,7 +80,7 @@ class FibTests(TestCase):
             (100, 354224848179261915075),
         ]:
             with timeout(message="Timeout running f({})".format(n)):
-               self.assertEqual(expected, ss(n+1))
+                self.assertEqual(expected, ss(n))
 
 
 

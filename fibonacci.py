@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-import numpy as np
+#!/usr/bin/env python
+from collections import deque
 
 
 def last_8(some_int):
@@ -8,10 +8,15 @@ def last_8(some_int):
     :param int some_int: the number
     :rtype: int
     """
+    print('number in last 8', some_int)
     return some_int%100000000
 
-
 def optimized_fibonacci(f):
+    """
+    Optimized version of recursive fibonacci
+    :param int f: the position of number to be generated
+    :rtype: int
+    """
     if (f<= 0):
         return 0
     elif (f==1):
@@ -22,42 +27,47 @@ def optimized_fibonacci(f):
 
 
 class SummableSequence(object):
+    """
+        class that generates sum of previous n numbers as next number
+
+    """
     def __init__(self, *initial):
 
         self.baselen=len(initial)
-
-        self.narr = np.array(initial)
-        print('Base sequence',self.narr, self.baselen)
+        self.q = deque(initial)
+        #print('Base sequence',self.q, self.baselen)
         #raise NotImplementedError()
 
     def __call__(self, i):
-        return self.gen_fibonacci(i)
+        return self.gen_series(i)
 
         #raise NotImplementedError()
 
-    def gen_fibonacci(self,i):
+    def gen_series(self,i):
+        """
+           Optimized version of recursive fibonacci
+           :param int i: the position of number to be generated
+           :rtype: int
+        """
         startseq = self.baselen
 
         if (i <= startseq):
-            return np.sum(self.narr)  #pass
+            return sum(self.q)  #pass
         else:
-
-            circ_start = 0
-
+            queue = deque(self.q)
             for k in (range(startseq, i+1)):
-                sumNum = np.sum(self.narr)
-                self.narr[circ_start]=sumNum
-                circ_start = (circ_start +1) % self.baselen
 
-            print('my result',self.narr.max())
-        return self.narr.max()
+                sumNum = sum(queue)
+                queue.append(sumNum)
+                queue.popleft()
+
+        return queue[-1]
 
 if __name__ == "__main__":
 
-    print("f(100000)[-8:]", last_8(optimized_fibonacci(6)))
+    print("f(100000)[-8:]", last_8(optimized_fibonacci(40)))
 
     new_seq = SummableSequence(5, 7, 11, 12)
 
-    #print("new_seq(100000)[-8:]:", new_seq(10))
 
-    print("new_seq(100000)[-8:]:", last_8(new_seq(1000000)))
+    print("new_seq(100000)[-8:]:", last_8(new_seq(10)))
