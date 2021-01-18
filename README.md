@@ -1,8 +1,8 @@
 
 # Pset 0 
 ## CI Status
-Travis ![Travis (.com)](https://img.shields.io/travis/com/mmohindra/mmohindra_pset0)
-CodeClimate ![Code Climate coverage](https://img.shields.io/codeclimate/coverage/mmohindra/mmohindra_pset0)
+![Travis (.com)](https://img.shields.io/travis/com/mmohindra/mmohindra_pset0)
+![Code Climate coverage](https://img.shields.io/codeclimate/coverage/mmohindra/mmohindra_pset0)
 ## Objectives
 
 * Demonstrate mastery of basic python syntax (functions, classes, etc)
