@@ -1,16 +1,8 @@
-# Pset 0
 
-***Please review*** 'General Pset Instructions' on Canvas prior to starting this
-assignment!
-
-Replace the below with your own build badges:
-
-[![Build Status](https://travis-ci.com/csci-e-29/0000aa-pset-0-starter.svg?branch=master)](https://travis-ci.com/csci-e-29/0000aa-pset-0-starter)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/aaaaa/maintainability)](https://codeclimate.com/repos/aaaaa/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/aaaaa/test_coverage)](https://codeclimate.com/repos/aaaaa/test_coverage)
-
+# Pset 0 
+## CI Status
+![Travis (.com)](https://img.shields.io/travis/com/mmohindra/mmohindra_pset0)
+![Code Climate coverage](https://img.shields.io/codeclimate/coverage/mmohindra/mmohindra_pset0)
 ## Objectives
 
 * Demonstrate mastery of basic python syntax (functions, classes, etc)
